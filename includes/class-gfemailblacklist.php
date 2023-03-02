@@ -55,7 +55,13 @@ class GFEmailBlacklist extends GFAddOn {
 		parent::init_frontend();
 		add_filter( 'gform_validation', array( $this, 'gf_emailblacklist_validation' ) );
 	}
-
+	/**
+	 * Add tasks or filters here that you want to perform only in t.
+	 */
+	public function init_ajax() {
+		parent::init_ajax();
+		add_filter( 'gform_validation', array( $this, 'gf_emailblacklist_validation' ) );
+	}
 	/**
 	 * Add the additional Email Blacklist
 	 *
